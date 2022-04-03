@@ -45,7 +45,11 @@ function date() {
         a[i].innerHTML = String(sec).length == 1 ? '0' + sec : sec;
         b[i].innerHTML = String(min).length == 1 ? '0' + min : min;
         c[i].innerHTML = String(hrs).length == 1 ? '0' + hrs : hrs;
-        d[i].innerHTML = String(day).length == 1 ? '0' + day : day;
+        if(day == 0) {
+            d[i].innerHTML =  7;
+        } else {
+            d[i].innerHTML = +day;
+        }
     }
 }
 setInterval(date, 1000)
